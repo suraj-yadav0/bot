@@ -11,7 +11,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Image.asset("assets/g10.png"),
+      //backgroundColor: Color.fromARGB(255, 7, 76, 103),
+      appBar: AppBar(actions: []),
+      body: Column(children: [
+        
+        Center(child: Image.asset("assets/g10.png"),)
+      ],),
     );
   }
 }
