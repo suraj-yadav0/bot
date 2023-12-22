@@ -1,3 +1,4 @@
+import 'package:bot/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -31,10 +32,19 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             children: [
               IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.notifications_active),),
-                 const SizedBox(width: 10,),
-                 CircleAvatar(child: Image.asset("assets/profile.jpg",fit: BoxFit.cover,scale: 1,),) 
+                onPressed: () {},
+                icon: const Icon(Icons.notifications_active),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              CircleAvatar(
+                child: Image.asset(
+                  "assets/profile.jpg",
+                  fit: BoxFit.cover,
+                  scale: 1,
+                ),
+              )
             ],
           )
         ],
@@ -92,11 +102,19 @@ class _HomeScreenState extends State<HomeScreen> {
               width: 200,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30), color: Colors.blue),
-              child: const Center(
-                child: Text(
-                  "Start Chat",
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ChatScreen()));
+                  },
+                  child: const Text(
+                    "Start Chat",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
             ),
