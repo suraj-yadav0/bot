@@ -48,19 +48,41 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+         crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: 400,
+             height: 400,
               width: double.infinity,
               decoration: const BoxDecoration(color: Colors.white),
-              child: Image.asset( "assets/g12.png",
-                scale: 3,),
+              child: Image.asset(
+                "assets/g12.png",
+                scale: 3,
+              ),
             ),
+            const Center(
+              child: Text(
+                "What Can I ",
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 30,
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
+             const Center(
+              child: Text(
+                "Do For You ? ",
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 30,
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
+            Image.asset("assets/wave.webp",scale: 5,),
+           const SizedBox(height: 20,),
+   Image.asset("assets/wave.png",fit: BoxFit.fitWidth,width: double.infinity,),
           ],
         ),
       ),
-      
     );
   }
 }
