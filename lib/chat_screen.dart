@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -77,7 +78,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     fontWeight: FontWeight.w500),
               ),
             ),
-            Image.asset("assets/wave.webp",scale: 5,),
+           Center(child: Lottie.asset("assets/wave.json",height: 60 ,),),
            const SizedBox(height: 20,),
    Image.asset("assets/wave.png",fit: BoxFit.fitWidth,width: double.infinity,),
           ],
