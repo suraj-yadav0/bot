@@ -80,7 +80,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
            Center(child: Lottie.asset("assets/wave.json",height: 60 ,),),
            const SizedBox(height: 20,),
-   Image.asset("assets/wave.png",fit: BoxFit.fitWidth,width: double.infinity,),
+   //Image.asset("assets/wave.png",fit: BoxFit.fitWidth,width: double.infinity,),
           ],
         ),
       ),
