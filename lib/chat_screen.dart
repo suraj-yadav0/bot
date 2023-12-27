@@ -37,7 +37,7 @@ class _ChatScreenState extends State<ChatScreen> {
             Text(
               "AI",
               style:
-                  TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),
+                  TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
             ),
             Text(
               "Psycholigist",
@@ -55,9 +55,9 @@ class _ChatScreenState extends State<ChatScreen> {
              height: 400,
               width: double.infinity,
               decoration: const BoxDecoration(color: Colors.white),
-              child: Image.asset(
-                "assets/g12.png",
-                scale: 3,
+              child: Lottie.asset(
+                "assets/bot.json",height: 200,
+                animate: false,
               ),
             ),
             const Center(
@@ -78,9 +78,9 @@ class _ChatScreenState extends State<ChatScreen> {
                     fontWeight: FontWeight.w500),
               ),
             ),
-           Center(child: Lottie.asset("assets/wave.json",height: 60 ,),),
+           Center(child: Lottie.asset("assets/wave2.json",height: 60 ,),),
            const SizedBox(height: 20,),
-   Image.asset("assets/wave.png",fit: BoxFit.fitWidth,width: double.infinity,),
+ Lottie.asset("assets/soundwave.json",width: double.infinity)
           ],
         ),
       ),

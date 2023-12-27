@@ -1,5 +1,6 @@
 import 'package:bot/chat_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(
               "AI",
               style:
-                  TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),
+                  TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
             ),
             Text(
               "Psycholigist",
@@ -56,9 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
             height: 75,
           ),
           Center(
-            child: Image.asset(
-              "assets/g12.png",
-              scale: 3,
+            child: Lottie.asset(
+              "assets/bot.json",height: 200,
+             
             ),
           ),
           const Center(
