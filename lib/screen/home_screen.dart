@@ -1,5 +1,6 @@
 
 import 'package:bot/screen/chat_screen.dart';
+import 'package:bot/screen/gemini_chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -19,12 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Row(
           children: [
             Text(
-              "AI",
+              "Neural",
               style:
                   TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
             ),
             Text(
-              "Psycholigist",
+              "Speak",
               style:
                   TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
             )
@@ -110,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ChatScreen()));
+                            builder: (context) => const GeminiChatScreen()));
                   },
                   child: const Text(
                     "Start Chat",

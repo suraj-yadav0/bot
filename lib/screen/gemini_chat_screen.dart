@@ -1,4 +1,6 @@
+import 'package:bot/api/gemini_api.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class GeminiChatScreen extends StatefulWidget {
   const GeminiChatScreen({super.key});
@@ -10,17 +12,19 @@ class GeminiChatScreen extends StatefulWidget {
 class _GeminiChatScreenState extends State<GeminiChatScreen> {
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(child: Scaffold(
+    final textController = TextEditingController();
+    RxString result = ''.obs;
+    return SafeArea(
+        child: Scaffold(
       appBar: AppBar(
         title: const Row(
           children: [
             Text(
-              "AI",
-              style:
-                  TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+              "Neural",
+              style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
             ),
             Text(
-              "Psycholigist",
+              "Speak",
               style:
                   TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
             )
@@ -47,13 +51,40 @@ class _GeminiChatScreenState extends State<GeminiChatScreen> {
           )
         ],
       ),
-
-      body: Column(children: [SizedBox(height: 20,),
-   Padding(
-     padding: const EdgeInsets.all(8.0),
-     child: TextField(decoration: InputDecoration(border: OutlineInputBorder(),labelText: "Ask Anything!", hintText: "Kuch Pucho"),),
-   )
-      ],),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: "Ask Anything!",
+                  hintText: "Kuch Pucho",
+                ),
+                controller: textController,
+              ),
+            ),
+            Center(
+              child: IconButton(
+                  onPressed: () async {
+                    result.value = await GeminiApi.getGeminiData(textController.text);
+                  }, icon: const Icon(Icons.send_outlined)),
+            ),
+            const SizedBox(height: 20,),
+            Container(
+              decoration: BoxDecoration(color: Colors.white30, border: Border.all(color: Colors.black) ),
+              child: Obx(() => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(result.value,style: const TextStyle(color: Colors.black,fontSize: 24,fontWeight: FontWeight.w400),),
+              )),
+            )
+          ],
+        ),
+      ),
     ));
   }
 }
