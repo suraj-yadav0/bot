@@ -75,13 +75,12 @@ class _GeminiChatScreenState extends State<GeminiChatScreen> {
                   }, icon: const Icon(Icons.send_outlined)),
             ),
             const SizedBox(height: 20,),
-            Container(
-              decoration: BoxDecoration(color: Colors.white30, border: Border.all(color: Colors.black) ),
-              child: Obx(() => Padding(
+            
+           Obx(() => Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(result.value,style: const TextStyle(color: Colors.black,fontSize: 24,fontWeight: FontWeight.w400),),
               )),
-            )
+            
           ],
         ),
       ),
